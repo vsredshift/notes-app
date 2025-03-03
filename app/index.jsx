@@ -1,5 +1,6 @@
 import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
+import { theme } from "./theme";
 import notepadImage from "../assets/images/notepad-icon.png";
 
 const HomeScreen = () => {
@@ -8,7 +9,7 @@ const HomeScreen = () => {
     <View style={styles.container}>
       <Image source={notepadImage} style={styles.image} />
       <Text style={styles.title}>Welcome to Notes App</Text>
-      <Text style={styles.subtitle}>Capture your ideas anytime, anyplace</Text>
+      <Text style={styles.subtitle}>Capture your ideas anytime, any place</Text>
 
       <TouchableOpacity
         style={styles.button}
@@ -21,13 +22,7 @@ const HomeScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 20,
-    backgroundColor: "#f8f9fa",
-  },
+  container: theme.container,
   image: {
     width: 160,
     height: 160,
