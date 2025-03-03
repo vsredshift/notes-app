@@ -1,5 +1,5 @@
 import { View, Text, Modal, TouchableOpacity, TextInput } from "react-native";
-import { styles } from "../notes/styles";
+import { styles } from "../app/notes/styles";
 
 const AddNoteModal = ({
   modalVisible,
@@ -24,6 +24,7 @@ const AddNoteModal = ({
             placeholderTextColor="#aaa"
             value={newNote}
             onChangeText={setNewNote}
+            autoFocus
           />
           <View style={styles.modalButtons}>
             <TouchableOpacity
