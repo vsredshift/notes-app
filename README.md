@@ -39,44 +39,6 @@ Notes App is a simple note-taking application built with React Native using Expo
    EXPO_PUBLIC_APPWRITE_PACKAGE_NAME=your-package-name-for-android,
    EXPO_PUBLIC_APPWRITE_BUNDLE_ID=your-bundle-id-for-iOS
    ```
-# Notes App
-
-Notes App is a simple note-taking application built with React Native using Expo. Users can log in, create notes, edit, and delete them. The backend is powered by Appwrite Cloud, which manages user authentication, database, and collection rules.
-
-## Features
-
-- User authentication
-- Create, edit, and delete notes
-- Secure backend with Appwrite
-
-## Installation
-
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/your-username/notes-app.git
-   cd notes-app
-   ```
-2. Install dependencies:
-   ```sh
-   npm install
-   ```
-3. Start the development server:
-   ```sh
-   npm start
-   ```
-
-## Appwrite Setup
-
-1. Create an account on [Appwrite](https://appwrite.io/)
-2. Create a new project and note down the project ID
-3. Set up authentication and database collections for storing notes
-4. Configure user permissions and rules as needed
-5. Add the required Appwrite credentials as environment variables in a `.env` file:
-   ```sh
-   APPWRITE_ENDPOINT=your-appwrite-endpoint
-   APPWRITE_PROJECT_ID=your-project-id
-   APPWRITE_API_KEY=your-api-key
-   ```
 
 ## Development Options
 
