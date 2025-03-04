@@ -7,9 +7,9 @@ import {
   ActivityIndicator,
 } from "react-native";
 import { styles } from "./styles";
-import NoteList from "../../components/NoteList";
-import AddNoteModal from "../../components/AddNoteModal";
-import noteService from "../../services/noteService";
+import NoteList from "@/components/NoteList";
+import AddNoteModal from "@/components/AddNoteModal";
+import noteService from "@/services/noteService";
 import { theme } from "../theme";
 
 const NoteScreen = () => {
@@ -52,20 +52,39 @@ const NoteScreen = () => {
     setModalVisible(false);
   };
 
+  // Edit Note
+  const editNote = async (id, newText) => {
+    if (!newText.trim()) {
+      Alert.alert("Error", "Note cannot be empty");
+      return;
+    }
+
+    const response = await noteService.updateNote(id, newText);
+    if (response.error) {
+      Alert.alert("Error", response.error);
+    } else {
+      setNotes((prevNotes) =>
+        prevNotes.map((note) =>
+          note.$id === id ? { ...note, text: response.data.text } : note
+        )
+      );
+    }
+  };
+
   // Delete Note
   const deleteNote = async (id) => {
-    Alert.alert('Delete Note', 'Are you sure you want to delete this note?', [
+    Alert.alert("Delete Note", "Are you sure you want to delete this note?", [
       {
-        text: 'Cancel',
-        style: 'cancel',
+        text: "Cancel",
+        style: "cancel",
       },
       {
-        text: 'Delete',
-        style: 'destructive',
+        text: "Delete",
+        style: "destructive",
         onPress: async () => {
           const response = await noteService.deleteNote(id);
           if (response.error) {
-            Alert.alert('Error', response.error);
+            Alert.alert("Error", response.error);
           } else {
             setNotes(notes.filter((note) => note.$id !== id));
           }
@@ -81,7 +100,7 @@ const NoteScreen = () => {
       ) : (
         <>
           {error && <Text style={styles.errorText}>{error}</Text>}
-          <NoteList notes={notes} onDelete={deleteNote} />
+          <NoteList notes={notes} onDelete={deleteNote} onEdit={editNote} />
         </>
       )}
       <TouchableOpacity

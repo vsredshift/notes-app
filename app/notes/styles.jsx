@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { theme } from "../theme";
+import { theme } from "@/app/theme";
 
 export const styles = StyleSheet.create({
   container: {
@@ -96,5 +96,13 @@ export const styles = StyleSheet.create({
   delete: {
     fontSize: 18,
     color: theme.colors.danger,
+  },
+  actions: {
+    flexDirection: "row",
+  },
+  edit: {
+    fontSize: 18,
+    marginRight: 10,
+    color: "blue",
   },
 });
