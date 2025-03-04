@@ -1,12 +1,9 @@
 import { StyleSheet } from "react-native";
 import { theme } from "@/app/theme";
+import { transform } from "typescript";
 
 export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    backgroundColor: "#fff",
-  },
+  container: theme.container,
   noteItem: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -104,5 +101,12 @@ export const styles = StyleSheet.create({
     fontSize: 18,
     marginRight: 10,
     color: "blue",
+  },
+  noNotesText: {
+    textAlign: "center",
+    fontSize: 18,
+    fontWeight: "bold",
+    color: theme.colors.textColorMedium,
+    marginTop: 15,
   },
 });
