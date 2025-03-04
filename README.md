@@ -1,50 +1,68 @@
-# Welcome to your Expo app 👋
+# Notes App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Notes App is a simple note-taking application built with React Native using Expo. Users can log in, create notes, edit, and delete them. The backend is powered by Appwrite Cloud, which manages user authentication, database, and collection rules.
 
-## Get started
+## Features
 
-1. Install dependencies
+- User authentication
+- Create, edit, and delete notes
+- Secure backend with Appwrite
 
-   ```bash
+## Installation
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/vsredshift/notes-app.git
+   cd notes-app
+   ```
+2. Install dependencies:
+   ```sh
    npm install
    ```
-
-2. Start the app
-
-   ```bash
-    npx expo start
+3. Start the development server:
+   ```sh
+   npm start
    ```
 
-In the output, you'll find options to open the app in a
+## Appwrite Setup
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+1. Create an account on [Appwrite](https://appwrite.io/)
+2. Create a new project and note down the project ID
+3. Set up authentication and database collections for storing notes
+4. Configure user permissions and rules as needed
+5. Add the required Appwrite credentials as environment variables in a `.env` file:
+   ```sh
+   EXPO_PUBLIC_APPWRITE_ENDPOINT=your-appwrite-endpoint,
+   EXPO_PUBLIC_APPWRITE_PROJECT_ID=your-project-id,
+   EXPO_PUBLIC_APPWRITE_DB_ID=your-database-id,
+   EXPO_PUBLIC_APPWRITE_COL_NOTES_ID=your-notes-collection-id,
+   EXPO_PUBLIC_APPWRITE_PACKAGE_NAME=your-package-name-for-android,
+   EXPO_PUBLIC_APPWRITE_BUNDLE_ID=your-bundle-id-for-iOS
+   ```
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Building and Publishing
 
-## Get a fresh project
+### Install on a Mobile Device
 
-When you're ready, run:
+1. Install Expo Go on your mobile device (available on [Google Play](https://play.google.com/) and [App Store](https://www.apple.com/app-store/))
+2. Start the Expo development server:
+   ```sh
+   npm start
+   ```
+3. Scan the QR code using Expo Go to run the app on your device
 
-```bash
-npm run reset-project
-```
+### Build and Publish to App Store
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+1. Install Expo CLI if not already installed:
+   ```sh
+   npm install -g expo-cli
+   ```
+2. Build the app for iOS or Android:
+   ```sh
+   eas build --platform ios
+   eas build --platform android
+   ```
+3. Follow the instructions to upload the build to the respective app store
 
-## Learn more
+For detailed instructions, refer to the Expo documentation.
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
